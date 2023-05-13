@@ -1,0 +1,135 @@
+
+//COLLECTION.addCard(1, 'Example', SETS.EXAMPLE);
+
+COLLECTION.addCard(2, 'Ice Cage', SETS.CORE2011);
+COLLECTION.addCard(3, 'Ice Cage', SETS.CORE2012);
+COLLECTION.addCard(1, 'Iceberg Cancrix', SETS.MODERNHORIZONS);
+COLLECTION.addCard(1, 'Icebind Pillar', SETS.KALDHEIM);
+COLLECTION.addCard(2, 'Icefall', SETS.COLDSNAP);
+COLLECTION.addCard(1, 'Icehide Troll', SETS.KALDHEIM);
+COLLECTION.addCard(1, 'Ichor Rats', SETS.SCARSOFMIRRODIN);
+COLLECTION.addCard(1, 'Ichor Synthesizer', SETS.ALLWILLBEONE);
+COLLECTION.addCard(3, 'Ichor Wellspring', SETS.MIRRODINBESIEGED);
+COLLECTION.addCard(2, 'Ichorclaw Myr', SETS.SCARSOFMIRRODIN);
+COLLECTION.addCard(2, 'Ichormoon Gauntlet', SETS.ALLWILLBEONE);
+
+COLLECTION.addCard(3, 'Ideas Unbound', SETS.SAVIORSOFKAMIGAWA);
+COLLECTION.addCard(1, 'Idol of Endurance', SETS.CORE2021, false, 342);
+
+COLLECTION.addCard(1, 'Ignite Disorder', SETS.CORE2010);
+
+COLLECTION.addCard(1, 'Illness in the Ranks', SETS.GATECRASH);
+COLLECTION.addCard(1, 'Illusionary Servant', SETS.CORE2010);
+
+COLLECTION.addCard(1, 'Imagecrafter', SETS.ONSLAUGHT);
+COLLECTION.addCard(2, 'Immerwolf', SETS.DARKASCENSION);
+COLLECTION.addCard(1, 'Impelled Giant', SETS.EVENTIDE);
+COLLECTION.addCard(1, 'Implement of Examination', SETS.AETHERREVOLT);
+COLLECTION.addCard(1, 'Implement of Ferocity', SETS.AETHERREVOLT);
+COLLECTION.addCard(1, 'Impostor of the Sixth Pride', SETS.MODERNHORIZONS);
+
+COLLECTION.addCard(1, 'Incendiary Oracle', SETS.THEROSBEYONDDEATH);
+COLLECTION.addCard(4, 'Incinerate', SETS.CORE2012);
+COLLECTION.addCard(2, 'Incite', SETS.CORE2011);
+COLLECTION.addCard(1, 'Incorrigible Youths', SETS.SHADOWSOVERINNISTRAD);
+COLLECTION.addCard(1, 'Increasing Confusion', SETS.DARKASCENSION);
+COLLECTION.addCard(2, 'Increasing Devotion', SETS.DARKASCENSION);
+COLLECTION.addCard(2, 'Increasing Vengeance', SETS.DARKASCENSION);
+COLLECTION.addCard(1, 'Incubation Sac', SETS.ALLWILLBEONE);
+COLLECTION.addCard(3, 'Incurable Ogre', SETS.SHARDSOFALARA);
+COLLECTION.addCard(1, 'Index', SETS.CORE2013);
+COLLECTION.addCard(1, 'Index', SETS.EIGHTH);
+COLLECTION.addCard(1, 'Indigo Faerie', SETS.EVENTIDE);
+COLLECTION.addCard(1, 'Induce Despair', SETS.ZENDIKARVSELDRAZI);
+COLLECTION.addCard(2, 'Inescapable Brute', SETS.SHADOWMOOR);
+COLLECTION.addCard(1, 'Infantry Veteran', SETS.CORE2011);
+COLLECTION.addCard(1, 'Infectious Bite', SETS.ALLWILLBEONE);
+COLLECTION.addCard(1, 'Infectious Bloodlust', SETS.MAGICORIGINS);
+COLLECTION.addCard(1, 'Infernal Plunge', SETS.INNISTRAD);
+COLLECTION.addCard(1, 'Inferno Jet', SETS.HOUROFDEVISTATION);
+COLLECTION.addCard(1, 'Infested Fleshcutter', SETS.ALLWILLBEONE);
+COLLECTION.addCard(2, 'Infiltration Lens', SETS.SCARSOFMIRRODIN);
+COLLECTION.addCard(1, 'Infiltrator\'s Magemark', SETS.GUILDPACT);
+COLLECTION.addCard(5, 'Inflame', SETS.DARKSTEEL);
+COLLECTION.addCard(1, 'Infuriate', SETS.THEROSBEYONDDEATH);
+COLLECTION.addCard(2, 'Ingot Chewer', SETS.LORWYN);
+COLLECTION.addCard(2, 'Inkfathom Divers', SETS.LORWYN);
+COLLECTION.addCard(1, 'Inkfathom Witch', SETS.SHADOWMOOR);
+COLLECTION.addCard(1, 'Inkmoth Nexus', SETS.MIRRODINBESIEGED);
+COLLECTION.addCard(1, 'Inner Calm, Outer Strength', SETS.SAVIORSOFKAMIGAWA);
+COLLECTION.addCard(1, 'Inner Struggle', SETS.SHADOWSOVERINNISTRAD);
+COLLECTION.addCard(5, 'Inner-Flame Acolyte', SETS.LORWYN);
+COLLECTION.addCard(2, 'Inquisitor\'s Flail', SETS.INNISTRAD);
+COLLECTION.addCard(2, 'Inside Out', SETS.EVENTIDE);
+COLLECTION.addCard(1, 'Insidious Bookworms', SETS.ALLIANCES);
+COLLECTION.addCard(4, 'Insolent Neonate', SETS.SHADOWSOVERINNISTRAD);
+COLLECTION.addCard(1, 'Inspiration', SETS.EIGHTH);
+COLLECTION.addCard(1, 'Inspire Awe', SETS.THEROSBEYONDDEATH);
+COLLECTION.addCard(2, 'Inspired Charge', SETS.BATTLEFORZENDIKAR);
+COLLECTION.addCard(1, 'Inspired Charge', SETS.CORE2011);
+COLLECTION.addCard(2, 'Inspiring Captain', SETS.SHADOWSOVERINNISTRAD);
+COLLECTION.addCard(3, 'Instill Infection', SETS.SCARSOFMIRRODIN);
+COLLECTION.addCard(1, 'Intangible Virtue', SETS.INNISTRAD);
+COLLECTION.addCard(1, 'Intimidator Initiate', SETS.SHADOWMOOR);
+COLLECTION.addCard(1, 'Into the Core', SETS.MIRRODINBESIEGED);
+COLLECTION.addCard(1, 'Into the Fray', SETS.SAVIORSOFKAMIGAWA);
+COLLECTION.addCard(1, 'Into the Maw of Hell', SETS.INNISTRAD);
+COLLECTION.addCard(3, 'Intrepid Provisioner', SETS.SHADOWSOVERINNISTRAD);
+COLLECTION.addCard(2, 'Inquisitor\'s Ox', SETS.SHADOWSOVERINNISTRAD);
+COLLECTION.addCard(1, 'Invasive Surgery', SETS.SHADOWSOVERINNISTRAD);
+COLLECTION.addCard(1, 'Invoke the Divine', SETS.KALDHEIM);
+
+COLLECTION.addCard(1, 'Iroas\'s Blessing', SETS.THEROSBEYONDDEATH);
+COLLECTION.addCard(6, 'Iron Myr', SETS.SCARSOFMIRRODIN);
+COLLECTION.addCard(1, 'Iron-Craw Crusher', SETS.BROTHERSWAR);
+COLLECTION.addCard(1, 'Irregular Cohort', SETS.MODERNHORIZONS);
+COLLECTION.addCard(1, 'Irreverent Revelers', SETS.THEROSBEYONDDEATH);
+
+COLLECTION.addCard(5, 'Island', SETS.THEROS, false, 234);
+COLLECTION.addCard(5, 'Island', SETS.THEROS, false, 235);
+COLLECTION.addCard(10, 'Island', SETS.THEROS, false, 236);
+COLLECTION.addCard(5, 'Island', SETS.THEROS, false, 237);
+COLLECTION.addCard(7, 'Island', SETS.CORE2014, false, 234);
+COLLECTION.addCard(5, 'Island', SETS.CORE2014, false, 235);
+COLLECTION.addCard(7, 'Island', SETS.CORE2014, false, 236);
+COLLECTION.addCard(3, 'Island', SETS.CORE2014, false, 237);
+COLLECTION.addCard(3, 'Island', SETS.BLESSEDVSCURSED, false, 35);
+COLLECTION.addCard(2, 'Island', SETS.BLESSEDVSCURSED, false, 35);
+COLLECTION.addCard(2, 'Island', SETS.BLESSEDVSCURSED, false, 35);
+COLLECTION.addCard(3, 'Island', SETS.BLESSEDVSCURSED, false, 71);
+COLLECTION.addCard(3, 'Island', SETS.BLESSEDVSCURSED, false, 72);
+COLLECTION.addCard(2, 'Island', SETS.BLESSEDVSCURSED, false, 73);
+COLLECTION.addCard(3, 'Island', SETS.INNISTRAD, false, 253);
+COLLECTION.addCard(2, 'Island', SETS.INNISTRAD, false, 254);
+COLLECTION.addCard(3, 'Island', SETS.INNISTRAD, false, 255);
+COLLECTION.addCard(3, 'Island', SETS.CORE2013, false, 234);
+COLLECTION.addCard(1, 'Island', SETS.CORE2013, true, 235);
+COLLECTION.addCard(5, 'Island', SETS.CORE2013, false, 236);
+COLLECTION.addCard(2, 'Island', SETS.CORE2013, false, 237);
+COLLECTION.addCard(1, 'Island', SETS.RETURNTORAVNICA, false, 255);
+COLLECTION.addCard(1, 'Island', SETS.RETURNTORAVNICA, false, 256);
+COLLECTION.addCard(2, 'Island', SETS.RETURNTORAVNICA, false, 257);
+COLLECTION.addCard(2, 'Island', SETS.RETURNTORAVNICA, false, 258);
+COLLECTION.addCard(3, 'Island', SETS.TIMESPIRAL, false, 286);
+COLLECTION.addCard(3, 'Island', SETS.TIMESPIRAL, false, 287);
+COLLECTION.addCard(4, 'Island', SETS.TIMESPIRAL, false, 289);
+COLLECTION.addCard(1, 'Island', SETS.ALLWILLBEONE, false, 263);
+COLLECTION.addCard(2, 'Island', SETS.ALLWILLBEONE, false, 268);
+COLLECTION.addCard(1, 'Island', SETS.MIRRODINBESIEGED, false, 148);
+COLLECTION.addCard(1, 'Island', SETS.NEWPHYREXIA, false, 169);
+COLLECTION.addCard(1, 'Island', SETS.SCARSOFMIRRODIN, false, 236);
+COLLECTION.addCard(1, 'Island', SETS.AVACYNRESTORED, false, 235);
+COLLECTION.addCard(1, 'Island', SETS.VENSERVSKOTH, false, 42);
+COLLECTION.addCard(1, 'Island', SETS.CORE2011, false, 237);
+COLLECTION.addCard(1, 'Island', SETS.BATTLEFORZENDIKAR, false, 257);
+COLLECTION.addCard(1, 'Island', SETS.CORE2012, false, 235);
+COLLECTION.addCard(1, 'Island', SETS.CORE2012, false, 237);
+COLLECTION.addCard(10, 'Island', SETS.SHADOWSOVERINNISTRAD, false, 286);
+COLLECTION.addCard(8, 'Island', SETS.SHADOWSOVERINNISTRAD, false, 287);
+COLLECTION.addCard(11, 'Island', SETS.SHADOWSOVERINNISTRAD, false, 288);
+
+COLLECTION.addCard(1, 'Ivory Giant', SETS.TIMESPIRALREMASTERED);
+
+COLLECTION.addCard(1, 'Ixidor\'s Will', SETS.ONSLAUGHT);
+
+COLLECTION.addCard(1, 'Izzet Guildgate', SETS.DRAGONSMAZE);

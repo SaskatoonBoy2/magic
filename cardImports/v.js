@@ -1,0 +1,88 @@
+
+//COLLECTION.addCard(1, 'Example', SETS.EXAMPLE);
+
+COLLECTION.addCard(1, 'Valakut Invoker', SETS.BATTLEFORZENDIKAR);
+COLLECTION.addCard(1, 'Valakut Invoker', SETS.COMMANDERLEGENDS);
+COLLECTION.addCard(2, 'Valakut Predator', SETS.BATTLEFORZENDIKAR);
+COLLECTION.addCard(1, 'Valley Dasher', SETS.KHANSOFTARKIR);
+COLLECTION.addCard(1, 'Vampire Aristocrat', SETS.CORE2010);
+COLLECTION.addCard(2, 'Vampire Envoy', SETS.OATHOFTHEGATEWATCH);
+COLLECTION.addCard(1, 'Vampire Nighthawk', SETS.SORINVSINNISTRAD);
+COLLECTION.addCard(2, 'Vampire Outcasts', SETS.CORE2012);
+COLLECTION.addCard(3, 'Vampiric Fury', SETS.INNISTRAD);
+COLLECTION.addCard(2, 'Vanishment', SETS.AVACYNRESTORED);
+COLLECTION.addCard(3, 'Vapor Snag', SETS.NEWPHYREXIA);
+COLLECTION.addCard(1, 'Varolz, the Scar-Striped', SETS.DRAGONSMAZE);
+COLLECTION.addCard(5, 'Vastwood Gorger', SETS.CORE2012);
+COLLECTION.addCard(2, 'Vastwood Gorger', SETS.CORE2013);
+COLLECTION.addCard(1, 'Vat Emergence', SETS.ALLWILLBEONE);
+COLLECTION.addCard(1, 'Vat of Rebirth', SETS.ALLWILLBEONE);
+COLLECTION.addCard(1, 'Vault Robber', SETS.KALDHEIM);
+COLLECTION.addCard(1, 'Vault Skyward', SETS.SCARSOFMIRRODIN);
+
+COLLECTION.addCard(1, 'Vedalken Anatomist', SETS.MIRRODINBESIEGED);
+COLLECTION.addCard(4, 'Vedalken Certarch', SETS.SCARSOFMIRRODIN);
+COLLECTION.addCard(3, 'Vedalken Entrancer', SETS.CORE2013);
+COLLECTION.addCard(1, 'Vedalken Infuser', SETS.MIRRODINBESIEGED);
+COLLECTION.addCard(1, 'Vega, the Watcher', SETS.KALDHEIM);
+COLLECTION.addCard(2, 'Veilborn Ghoul', SETS.CORE2013);
+COLLECTION.addCard(1, 'Vengeful Devil', SETS.MODERNHORIZONS);
+COLLECTION.addCard(1, 'Venomous Changeling', SETS.MODERNHORIZONS);
+COLLECTION.addCard(1, 'Venomous Hierophant', SETS.THEROSBEYONDDEATH);
+COLLECTION.addCard(1, 'Verdant Haven', SETS.CORE2014);
+COLLECTION.addCard(2, 'Vessel of Ephemera', SETS.SHADOWSOVERINNISTRAD);
+COLLECTION.addCard(4, 'Vessel of Malignity', SETS.SHADOWSOVERINNISTRAD);
+COLLECTION.addCard(3, 'Vessel of Nascency', SETS.SHADOWSOVERINNISTRAD);
+COLLECTION.addCard(1, 'Vessel of Volatility', SETS.SHADOWSOVERINNISTRAD);
+COLLECTION.addCard(1, 'Veteran Armorsmith', SETS.CORE2010);
+COLLECTION.addCard(1, 'Veteran Swordsmith', SETS.CORE2010);
+COLLECTION.addCard(2, 'Vexing Gull', SETS.THEROSBEYONDDEATH);
+
+COLLECTION.addCard(3, 'Viashino Racketeer', SETS.RETURNTORAVNICA);
+COLLECTION.addCard(1, 'Viashino Sandscout', SETS.TENTH);
+COLLECTION.addCard(2, 'Viashino Sandsprinter', SETS.MODERNHORIZONS);
+COLLECTION.addCard(2, 'Vicious Hunger', SETS.EIGHTH);
+COLLECTION.addCard(1, 'Victim of Night', SETS.BLESSEDVSCURSED);
+COLLECTION.addCard(3, 'Victim of Night', SETS.INNISTRAD);
+COLLECTION.addCard(1, 'Victorious Destruction', SETS.NEWPHYREXIA);
+COLLECTION.addCard(1, 'Vigean Hydropon', SETS.DISSENSION);
+COLLECTION.addCard(3, 'Vigil for the Lost', SETS.SCARSOFMIRRODIN);
+COLLECTION.addCard(3, 'Vile Rebirth', SETS.CORE2013);
+COLLECTION.addCard(1, 'Village Bell-Ringer', SETS.BLESSEDVSCURSED);
+COLLECTION.addCard(4, 'Village Bell-Ringer', SETS.INNISTRAD);
+COLLECTION.addCard(1, 'Village Cannibals', SETS.INNISTRAD);
+COLLECTION.addCard(2, 'Village Survivors', SETS.DARKASCENSION);
+COLLECTION.addCard(1, 'Villagers of Estwald', SETS.INNISTRAD);
+COLLECTION.addCard(1, 'Vineweft', SETS.CORE2015);
+COLLECTION.addCard(1, 'Violent Impact', SETS.AMONKHET);
+COLLECTION.addCard(1, 'Viper\'s Kiss', SETS.THEROS);
+COLLECTION.addCard(1, 'Viridian Revel', SETS.SCARSOFMIRRODIN);
+COLLECTION.addCard(2, 'Virulent Wound', SETS.MIRRODINBESIEGED);
+COLLECTION.addCard(1, 'Visara the Dreadful', SETS.ETERNALMASTERS);
+COLLECTION.addCard(1, 'Visions of Beyond', SETS.CORE2012);
+COLLECTION.addCard(3, 'Vithian Stinger', SETS.SHARDSOFALARA);
+COLLECTION.addCard(2, 'Vithian Stinger', SETS.SORINVSINNISTRAD);
+COLLECTION.addCard(4, 'Vivisection', SETS.MIRRODINBESIEGED);
+COLLECTION.addCard(1, 'Vizkopa Guildmage', SETS.GATECRASH);
+
+COLLECTION.addCard(4, 'Voice of the Provinces', SETS.AVACYNRESTORED);
+COLLECTION.addCard(1, 'Voice of the Provinces', SETS.BLESSEDVSCURSED);
+COLLECTION.addCard(4, 'Voiceless Spirit', SETS.INNISTRAD);
+COLLECTION.addCard(2, 'Void Stalker', SETS.CORE2013);
+COLLECTION.addCard(2, 'Voidwielder', SETS.RETURNTORAVNICA);
+COLLECTION.addCard(4, 'Volcanic Strength', SETS.CORE2013);
+COLLECTION.addCard(1, 'Volcanic Submersion', SETS.SHARDSOFALARA);
+COLLECTION.addCard(3, 'Voldaren Duelist', SETS.SHADOWSOVERINNISTRAD);
+COLLECTION.addCard(3, 'Volition Reins', SETS.SCARSOFMIRRODIN);
+COLLECTION.addCard(1, 'Volt Charge', SETS.ALLWILLBEONE);
+COLLECTION.addCard(1, 'Volt Charge', SETS.NEWPHYREXIA);
+COLLECTION.addCard(1, 'Voracious Hatchling', SETS.EVENTIDE);
+COLLECTION.addCard(1, 'Vorstclaw', SETS.AVACYNRESTORED);
+COLLECTION.addCard(1, 'Voyage\'s End', SETS.THEROS);
+COLLECTION.addCard(1, 'Voyaging Satyr', SETS.THEROS);
+
+COLLECTION.addCard(3, 'Vraska, Swarm\'s Eminence', SETS.WAROFTHESPARK);
+
+COLLECTION.addCard(1, 'Vulshok Berserker', SETS.CORE2011);
+COLLECTION.addCard(5, 'Vulshok Heartstoker', SETS.SCARSOFMIRRODIN);
+COLLECTION.addCard(3, 'Vulshok Sorcerer', SETS.FIREANDLIGHTNING);

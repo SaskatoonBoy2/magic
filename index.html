@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+    <title>Eric's mtg database</title>
+    <link rel="stylesheet" href="css/fullscreenp5.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js"></script>
+    <!-- <script src="js/p5.dom.min.js"></script> -->
+    <!-- <script src="js/p5.sound.min.js"></script> -->
+  </head>
+  <body>
+    <div>
+      <button id="backbutton" type="button" onclick="updateList(searchbar.value().toLowerCase(), typesearchbar.value().toLowerCase());" class="hidden">Back</button>
+      <input id="searchbar"></input>
+      <input id="typesearchbar"></input>
+      <p id="setseparatelabel" class="inline">Separte By Sets</p>
+      <input id="setseparate" type="checkbox" onclick="updateList(searchbar.value().toLowerCase(), typesearchbar.value().toLowerCase());"></input>
+      <button id="previousbutton" type="button" onclick="previousPage();" class="hidden">Previous</button>
+      <p id="pagelabel" class="inline">Page 1 of 1</p>
+      <button id="nextbutton" type="button" onclick="nextPage();" class="hidden">Next</button>
+    </div>
+    <div id="list"></div>
+    <img class="inline" id="image" class="hidden">
+    <div class="inline">
+      <h1 id="name"></h1>
+      <h2 id="set"></h2>
+      <h2 id="colour"></h2>
+      <h2 id="rarity"></h2>
+      <h2 id="type"></h2>
+      <h3 id="own"></h3>
+      <h3 id="foil"></h3>
+      <h3 id="cost"></h3>
+      <p id="value"></p>
+      <p id="text"></p>
+      <p id="flavour"></p>
+      <p id="storage"></p>
+    </div>
+  </body>
+  <script src="set.js"></script>
+  <script src="card.js"></script>
+  <script src="cards.js"></script>
+  <script src="collection.js"></script>
+  <script src="storage.js"></script>
+  <script src="deck.js"></script>
+  <script src="decks/critters.js"></script>
+  <script src="decks/hamster.js"></script>
+  <script src="decks/poison.js"></script>
+  <script src="cardImports/a.js"></script>
+  <script src="cardImports/b.js"></script>
+  <script src="cardImports/c.js"></script>
+  <script src="cardImports/d.js"></script>
+  <script src="cardImports/e.js"></script>
+  <script src="cardImports/f.js"></script>
+  <script src="cardImports/g.js"></script>
+  <script src="cardImports/h.js"></script>
+  <script src="cardImports/i.js"></script>
+  <script src="cardImports/j.js"></script>
+  <script src="cardImports/k.js"></script>
+  <script src="cardImports/l.js"></script>
+  <script src="cardImports/m.js"></script>
+  <script src="cardImports/n.js"></script>
+  <script src="cardImports/o.js"></script>
+  <script src="cardImports/p.js"></script>
+  <script src="cardImports/q.js"></script>
+  <script src="cardImports/r.js"></script>
+  <script src="cardImports/s.js"></script>
+  <script src="cardImports/t.js"></script>
+  <script src="cardImports/u.js"></script>
+  <script src="cardImports/v.js"></script>
+  <script src="cardImports/w.js"></script>
+  <script src="cardImports/x.js"></script>
+  <script src="cardImports/y.js"></script>
+  <script src="cardImports/z.js"></script>
+  <script src="sketch.js"></script>
+</html>
