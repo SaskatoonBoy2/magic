@@ -265,7 +265,7 @@ function delay(time) {
 
 async function delayedFetchStatsData(setCode, setNumber) {
   valuesFetching = valuesFetching + 1;
-  await delay(100);
+  await delay(500);
   fetchStatsDataRaw(setCode, setNumber);
 }
 

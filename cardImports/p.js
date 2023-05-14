@@ -11,6 +11,7 @@ COLLECTION.addCard(1, 'Palace Guard', SETS.CORE2011);
 COLLECTION.addCard(1, 'Palisade Giant', SETS.RETURNTORAVNICA);
 COLLECTION.addCard(1, 'Palladium Myr', SETS.SCARSOFMIRRODIN);
 COLLECTION.addCard(1, 'Panic Attack', SETS.CORE2010);
+COLLECTION.addCard(2, 'Panic Spellbomb', SETS.SCARSOFMIRRODIN);
 COLLECTION.addCard(1, 'Panic Spellbomb', SETS.SCARSOFMIRRODIN, true);
 COLLECTION.addCard(1, 'Paralyzing Grasp', SETS.RETURNTORAVNICA);
 COLLECTION.addCard(2, 'Paraselene', SETS.INNISTRAD);
@@ -20,8 +21,10 @@ COLLECTION.addCard(4, 'Pathbreaker Wurm', SETS.AVACYNRESTORED);
 COLLECTION.addCard(1, 'Patrol Signaler', SETS.EVENTIDE);
 COLLECTION.addCard(1, 'Pawn of Ulamog', SETS.ZENDIKARVSELDRAZI);
 
+COLLECTION.addCard(2, 'Peace Strider', SETS.MIRRODINBESIEGED);
 COLLECTION.addCard(1, 'Penumbra Spider', SETS.TIMESPIRALREMASTERED);
 COLLECTION.addCard(4, 'Peregrine Griffin', SETS.CORE2012);
+COLLECTION.addCard(7, 'Perilous Myr', SETS.SCARSOFMIRRODIN);
 COLLECTION.addCard(1, 'Perilous Shadow', SETS.RETURNTORAVNICA);
 COLLECTION.addCard(1, 'Perplexing Chimera', SETS.BORNOFTHEGODS);
 COLLECTION.addCard(3, 'Pestermite', SETS.LORWYN);
@@ -38,10 +41,13 @@ COLLECTION.addCard(1, 'Pheres-Band Centaurs', SETS.THEROS);
 COLLECTION.addCard(3, 'Phyresis', SETS.MIRRODINBESIEGED);
 COLLECTION.addCard(1, 'Phyrexian Arena', SETS.ALLWILLBEONE);
 COLLECTION.addCard(1, 'Phyrexian Beast', 't'+SETS.ALLWILLBEONE, false, 6);
-COLLECTION.addCard(1, 'Phyrexian Driver', SETS.NEMESIS);
+COLLECTION.addCard(3, 'Phyrexian Digester', SETS.MIRRODINBESIEGED);
+COLLECTION.addCard(1, 'Phyrexian Driver', SETS.NEMESIS); 
+COLLECTION.addCard(3, 'Phyrexian Hulk', SETS.CORE2013);
 COLLECTION.addCard(1, 'Phyrexian Ingester', SETS.NEWPHYREXIA, true);
 COLLECTION.addCard(3, 'Phyrexian Mite', 't'+SETS.ALLWILLBEONE, false, 11);
 COLLECTION.addCard(1, 'Phyrexian Monitor', SETS.URZASDESTINY);
+COLLECTION.addCard(1, 'Phyrexian Revoker', SETS.MIRRODINBESIEGED);
 COLLECTION.addCard(1, 'Phyrexian Swarmlord', SETS.NEWPHYREXIA, true);
 
 COLLECTION.addCard(1, 'Pieces of the Puzzle', SETS.SHADOWSOVERINNISTRAD);
@@ -51,6 +57,7 @@ COLLECTION.addCard(3, 'Pillar of Flame', SETS.AVACYNRESTORED);
 COLLECTION.addCard(1, 'Pillar of Flame', SETS.AVACYNRESTORED, true);
 COLLECTION.addCard(1, 'Pillarfield Ox', SETS.CORE2013);
 COLLECTION.addCard(1, 'Pincher Beetles', SETS.TENTH);
+COLLECTION.addCard(1, 'Piston Sledge', SETS.MIRRODINBESIEGED);
 COLLECTION.addCard(5, 'Pitchburn Devils', SETS.INNISTRAD);
 
 COLLECTION.addCard(1, 'Plague Myr', SETS.MIRRODINBESIEGED);
@@ -113,6 +120,7 @@ COLLECTION.addCard(1, 'Porcelain Zealot', SETS.ALLWILLBEONE);
 COLLECTION.addCard(3, 'Pore Over the Pages', SETS.SHADOWSOVERINNISTRAD);
 COLLECTION.addCard(1, 'Port of Karfell', SETS.KALDHEIM);
 COLLECTION.addCard(1, 'Power of Fire', SETS.SHADOWMOOR);
+COLLECTION.addCard(1, 'Power Plant Worker', SETS.BROTHERSWAR);
 COLLECTION.addCard(1, 'Powerstone', 't'+SETS.BROTHERSWAR, false, 7);
 
 COLLECTION.addCard(1, 'Predation Steward', SETS.ALLWILLBEONE);
@@ -125,6 +133,7 @@ COLLECTION.addCard(2, 'Prey Upon', SETS.INNISTRAD);
 COLLECTION.addCard(1, 'Price of Progress', SETS.FIREANDLIGHTNING);
 COLLECTION.addCard(5, 'Pride Guardian', SETS.CORE2012);
 COLLECTION.addCard(3, 'Priests of Norn', SETS.MIRRODINBESIEGED);
+COLLECTION.addCard(2, 'Primal Clay', SETS.CORE2013);
 COLLECTION.addCard(3, 'Primal Huntbeast', SETS.CORE2013);
 COLLECTION.addCard(1, 'Primordial Hydra', SETS.CORE2012);
 COLLECTION.addCard(1, 'Prismatic Strands', SETS.JUDGMENT);
@@ -132,8 +141,10 @@ COLLECTION.addCard(1, 'Prismwake Merrow', SETS.SHADOWMOOR);
 COLLECTION.addCard(1, 'Pristine Talisman', SETS.NEWPHYREXIA);
 COLLECTION.addCard(1, 'Prized Elephant', SETS.CORE2013);
 COLLECTION.addCard(1, 'Promised Kannushi', SETS.SAVIORSOFKAMIGAWA);
+COLLECTION.addCard(1, 'Prophetic Prism', SETS.ALLWILLBEONE);
 
 COLLECTION.addCard(3, 'Psychic Miasma', SETS.SCARSOFMIRRODIN);
+COLLECTION.addCard(1, 'Psychosis Crawler', SETS.BROTHERSWARRETROARTIFACTS);
 COLLECTION.addCard(1, 'Psychotic Haze', SETS.TORMENT);
 COLLECTION.addCard(1, 'Psychotic Fury', SETS.DISSENSION);
 

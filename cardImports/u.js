@@ -3,6 +3,7 @@
 
 COLLECTION.addCard(1, 'Ubul Sar Gatekeepers', SETS.DRAGONSMAZE);
 
+COLLECTION.addCard(1, 'Ulamog\'s Crusher', SETS.ZENDIKARVSELDRAZI);
 COLLECTION.addCard(1, 'Ultimate Price', SETS.RETURNTORAVNICA);
 COLLECTION.addCard(2, 'Ulvenwald Bear', SETS.DARKASCENSION);
 COLLECTION.addCard(1, 'Ulvenwald Tracker', SETS.AVACYNRESTORED);

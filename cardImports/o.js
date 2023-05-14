@@ -31,11 +31,14 @@ COLLECTION.addCard(1, 'Omen of the Hunt', SETS.THEROSBEYONDDEATH);
 COLLECTION.addCard(1, 'Omenspeaker', SETS.THEROS);
 
 COLLECTION.addCard(1, 'One with the Stars', SETS.THEROSBEYONDDEATH);
+COLLECTION.addCard(4, 'One-Eyed Scarecrow', SETS.INNISTRAD);
 COLLECTION.addCard(1, 'Onyx Mage', SETS.CORE2012);
 
 COLLECTION.addCard(1, 'Oona\'s Grace', SETS.EVENTIDE);
 
 COLLECTION.addCard(1, 'Opal Lake Gatekeepers', SETS.DRAGONSMAZE);
+COLLECTION.addCard(1, 'Opaline Unicorn', SETS.CONSPIRACYTAKETHECROWN);
+COLLECTION.addCard(1, 'Opaline Unicorn', SETS.THEROS);
 COLLECTION.addCard(1, 'Opportunity', SETS.CORE2014);
 
 COLLECTION.addCard(1, 'Oracle of Dust', SETS.BATTLEFORZENDIKAR);
@@ -45,13 +48,17 @@ COLLECTION.addCard(5, 'Orcish Bloodpainter', SETS.COLDSNAP);
 COLLECTION.addCard(1, 'Orcish Hellraiser', SETS.MODERNHORIZONS);
 COLLECTION.addCard(1, 'Orcish Oriflamme', SETS.ETERNALMASTERS);
 COLLECTION.addCard(1, 'Organ Grinder', SETS.TORMENT);
+COLLECTION.addCard(4, 'Origin Spellbomb', SETS.SCARSOFMIRRODIN);
 COLLECTION.addCard(1, 'Orim\'s Chant', SETS.PLANESHIFT);
 COLLECTION.addCard(1, 'Orthodoxy Enforcer', SETS.ALLWILLBEONE, true);
 COLLECTION.addCard(1, 'Orzhov Advokist', SETS.COMMANDER2016);
+COLLECTION.addCard(1, 'Orzhov Cluestone', SETS.DRAGONSMAZE);
 COLLECTION.addCard(4, 'Orzhov Guildgate', SETS.DRAGONSMAZE);
 
 COLLECTION.addCard(1, 'Ossification', SETS.ALLWILLBEONE);
 COLLECTION.addCard(1, 'Ostracize', SETS.URZASLEGACY);
+
+COLLECTION.addCard(1, 'Otherworld Atlas', SETS.AVACYNRESTORED);
 
 COLLECTION.addCard(2, 'Outrage Shaman', SETS.EVENTIDE);
 COLLECTION.addCard(1, 'Outrider of Jhess', SETS.SHARDSOFALARA);
