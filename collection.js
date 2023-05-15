@@ -1,10 +1,10 @@
-const COLLECTION = {};
-const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
+const collection = {};
+const alphabet = 'abcdefghijklmnopqrstuvwxyz';
 
-COLLECTION.getCollectorNumber = function(name, set) {
-    cards = Object.keys(CARDS[name.toLowerCase()][set]);
+collection.getCollectorNumber = function(name, set) {
+    let cardNames = Object.keys(cards[name.toLowerCase()][set]);
     let collector_number = Infinity;
-    for (let number of cards) {
+    for (let number of cardNames) {
         if (typeof number == 'number') {
             if (typeof collector_number == 'number') {
                 if (number < collector_number) {
@@ -30,7 +30,7 @@ COLLECTION.getCollectorNumber = function(name, set) {
                 } else if (alt_number === c_number) {
                     let alt_char = number.substring(number.length, number.length);
                     let c_char = number.substring(collector_number.length, collector_number.length);
-                    if (ALPHABET.indexOf(alt_char) < ALPHABET.indexOf(c_char)) {
+                    if (alphabet.indexOf(alt_char) < alphabet.indexOf(c_char)) {
                         collector_number = number;
                     }
                 }
@@ -39,22 +39,22 @@ COLLECTION.getCollectorNumber = function(name, set) {
     }
     return collector_number;
 }
-COLLECTION.addCard =  function(count, name, set, foil, collector_number) {
+collection.addCard =  function(count, name, set, foil, collector_number) {
 
     if (collector_number == undefined) {
-        collector_number = COLLECTION.getCollectorNumber(name, set);
+        collector_number = collection.getCollectorNumber(name, set);
     }
-    let card = CARDS[name.toLowerCase()][set][collector_number];
+    let card = cards[name.toLowerCase()][set][collector_number];
     card.addCount(count, foil);
-    if (CARDS.COLLECTED[name.toLowerCase()] == undefined) {
-        CARDS.COLLECTED[name.toLowerCase()] = {};
-        CARDS.COLLECTED[name.toLowerCase()].generic = new GenericCard(card);
+    if (cards.collected[name.toLowerCase()] == undefined) {
+        cards.collected[name.toLowerCase()] = {};
+        cards.collected[name.toLowerCase()].generic = new GenericCard(card);
     } else {
-        CARDS.COLLECTED[name.toLowerCase()].generic.addCard(card, count, foil);
+        cards.collected[name.toLowerCase()].generic.addCard(card, count, foil);
     }
-    if (CARDS.COLLECTED[name.toLowerCase()][set] == undefined) {
-        CARDS.COLLECTED[name.toLowerCase()][set] = {};
-        CARDS.COLLECTED[name.toLowerCase()][set][collector_number] = card;
+    if (cards.collected[name.toLowerCase()][set] == undefined) {
+        cards.collected[name.toLowerCase()][set] = {};
+        cards.collected[name.toLowerCase()][set][collector_number] = card;
     }
     
 }

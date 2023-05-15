@@ -1,7 +1,16 @@
 
-const CARDS = {};
-const CARDSBYID = {};
-CARDS.COLLECTED = {};
+const cards = {};
+cards.collected = {};
+
+cards.get = function(name,set_code,collector_number) {
+    if (cards[name] == undefined) {
+        return undefined
+    }
+    if (cards[name][set_code] == undefined) {
+        return undefined
+    }
+    return cards[name][set_code][collector_number];
+}
 
 class GenericCard {
     constructor(card) {
@@ -146,20 +155,19 @@ class Card {
         this.value = NaN;
         this.foilValue = NaN;
         this.storageIndex = 0;
-        this.deckCards = 0;
+        this.deckcards = 0;
 
-        if (CARDS[this.index] == undefined) {
-            CARDS[this.index] = {};
+        if (cards[this.index] == undefined) {
+            cards[this.index] = {};
         }
 
-        if (CARDS[this.index][this.set_code] == undefined) {
-            CARDS[this.index][this.set_code] = {};
+        if (cards[this.index][this.set_code] == undefined) {
+            cards[this.index][this.set_code] = {};
         }
-        if (CARDS[this.index][this.set_code][this.collector_number] != undefined) {
+        if (cards[this.index][this.set_code][this.collector_number] != undefined) {
             console.log(this.index+' already loaded');
         }
-        CARDS[this.index][this.set_code][this.collector_number] = this;
-        CARDSBYID[this.id] = this;
+        cards[this.index][this.set_code][this.collector_number] = this;
 
     };
 
@@ -168,21 +176,21 @@ class Card {
         if (foil) {
             this.foil = this.foil + count;
         }
-        if (this.deckCards < count) {
+        if (this.deckcards < count) {
             if (!foil) {
                 let index = COLOURTOSTORAGE[this.getColour()];
                 this.storageIndex = STORAGEINDEXES[index];
-                STORAGEINDEXES[index] = STORAGEINDEXES[index] + count - this.deckCards;
+                STORAGEINDEXES[index] = STORAGEINDEXES[index] + count - this.deckcards;
             }
-            this.deckCards = 0;
+            this.deckcards = 0;
         } else {
-            this.deckCards = this.deckCards - count;
+            this.deckcards = this.deckcards - count;
         }
     }
 
     addDeck(deck, count) {
         this.decks.push(deck);
-        this.deckCards = this.deckCards + count;
+        this.deckcards = this.deckcards + count;
     }
 
     getColour() {

@@ -27,8 +27,3 @@ a:hover {
     color: blue;
     text-decoration: underline;
 }
-
-#typesearchbar {
-    display: none;
-    visibility: hidden;
-}

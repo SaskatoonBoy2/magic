@@ -1,27 +1,27 @@
-CARDS.DECKS = {};
+cards.decks = {};
 
 class Deck {
     constructor(name, storageIndex) {
         this.name = name
         this.cards = {};
-        CARDS.DECKS[name] = this;
+        cards.decks[name] = this;
         this.storageIndex = storageIndex;
     }
 
-    addCard(count, name, set, foil, collector_number) {
-            let cards = CARDS[name.toLowerCase()][set]
+    addCard(count, name, set_code, foil, collector_number) {
+            let set = cards[name.toLowerCase()][set_code]
             let card;
             if (collector_number == undefined) {
-                collector_number = COLLECTION.getCollectorNumber(name, set);
+                collector_number = collection.getCollectorNumber(name, set_code);
             }
-            card = cards[collector_number];
+            card = set[collector_number];
             let cardName = card.name.toLowerCase();
             if (card.decks.includes(this)) {
                 if (foil) {
-                    this.cards[cardName].foil = this.cards[cardName].foil + count;
+                    this.cards[cardName].foil += count;
                 }
-                this.cards[cardName].count = this.cards[cardName].count + count;
-                card.deckCards = card.deckCards + count;                
+                this.cards[cardName].count += count;
+                card.deckCards += count;                
             } else {
                 card.addDeck(this, count)
                 let foil_count = 0;

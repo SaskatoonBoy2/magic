@@ -5,38 +5,60 @@
     <title>Eric's mtg database</title>
     <link rel="stylesheet" href="css/fullscreenp5.css">
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js"></script>
-    <!-- <script src="js/p5.dom.min.js"></script> -->
-    <!-- <script src="js/p5.sound.min.js"></script> -->
   </head>
   <body>
     <div>
-      <button id="backbutton" type="button" onclick="updateList(searchbar.value().toLowerCase(), typesearchbar.value().toLowerCase());" class="hidden">Back</button>
-      <input id="searchbar"></input>
-      <input id="typesearchbar"></input>
-      <p id="setseparatelabel" class="inline">Separte By Sets</p>
-      <input id="setseparate" type="checkbox" onclick="updateList(searchbar.value().toLowerCase(), typesearchbar.value().toLowerCase());"></input>
-      <button id="previousbutton" type="button" onclick="previousPage();" class="hidden">Previous</button>
-      <p id="pagelabel" class="inline">Page 1 of 1</p>
-      <button id="nextbutton" type="button" onclick="nextPage();" class="hidden">Next</button>
+      <button id="backButton" type="button" onclick="list.show();list.display();" class="hidden">Back</button>
+      <input id="nameBar" placeholder="Name" oninput="list.updateSearch()"></input>
+      <input id="typeBar" placeholder="Type" oninput="list.updateSearch()"></input>
+      <button id="advancedButton" type="button" onclick="display.advancedSearch();">Advanced Search</button>
+      <button id="previousButton" type="button" onclick="display.previousPage();" class="hidden">Previous</button>
+      <p id="pageLabel" class="inline">Page 1 of 1</p>
+      <button id="nextButton" type="button" onclick="display.nextPage();" class="hidden">Next</button>
     </div>
-    <div id="list"></div>
+    <div id="advancedDiv" class="hidden">
+      <h3>General</h3>
+      <p class="inline">Separte By Sets</p>
+      <input id="separateSetsCheckbox" type="checkbox"></input>
+      <h3>Common</h3>
+      <p class="inline">Include</p>
+      <input id="includeCommon" type="checkbox" checked></input>
+      <p class="inline">Min Count</p>
+      <input id="minCountCommon" type="number" value=0></input>
+      <h3>Uncommon</h3>
+      <p class="inline">Include</p>
+      <input id="includeUncommon" type="checkbox" checked></input>
+      <p class="inline">Min Count</p>
+      <input id="minCountUncommon" type="number" value=0></input>
+      <h3>Rare</h3>
+      <p class="inline">Include</p>
+      <input id="includeRare" type="checkbox" checked></input>
+      <p class="inline">Min Count</p>
+      <input id="minCountRare" type="number" value=0></input>
+      <h3>Mythic</h3>
+      <p class="inline">Include</p>
+      <input id="includeMythic" type="checkbox" checked></input>
+      <p class="inline">Min Count</p>
+      <input id="minCountMythic" type="number" value=0></input>
+    </div>
+    <div id="listDiv"></div>
     <img class="inline" id="image" class="hidden">
     <div class="inline">
-      <h1 id="name"></h1>
-      <h2 id="set"></h2>
-      <h2 id="colour"></h2>
-      <h2 id="rarity"></h2>
-      <h2 id="type"></h2>
-      <h3 id="own"></h3>
-      <h3 id="foil"></h3>
-      <h3 id="cost"></h3>
-      <p id="value"></p>
-      <p id="text"></p>
-      <p id="flavour"></p>
-      <p id="storage"></p>
+      <h1 id="nameHeader"></h1>
+      <h2 id="setHeader"></h2>
+      <h2 id="colourHeader"></h2>
+      <h2 id="rarityHeader"></h2>
+      <h2 id="typeHeader"></h2>
+      <h3 id="countHeader"></h3>
+      <h3 id="foilHeader"></h3>
+      <h3 id="costHeader"></h3>
+      <p id="valueParagraph"></p>
+      <p id="textParagraph"></p>
+      <p id="flavourParagraph"></p>
+      <p id="storageParagraph"></p>
     </div>
   </body>
+  <script src="load.js"></script>
   <script src="set.js"></script>
   <script src="card.js"></script>
   <script src="cards.js"></script>
@@ -72,5 +94,8 @@
   <script src="cardImports/x.js"></script>
   <script src="cardImports/y.js"></script>
   <script src="cardImports/z.js"></script>
-  <script src="sketch.js"></script>
+  <script src="display.js"></script>
+  <script src="search.js"></script>
+  <script src="stats.js"></script>
+  <script src="start.js"></script>
 </html>

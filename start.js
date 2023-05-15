@@ -1,0 +1,3 @@
+
+list.updateSearch();
+stats.calculate();
