@@ -78,7 +78,6 @@ class GenericCard {
                 storageIndex = card.storageIndex;
             }
         }
-        console.log(decks);
         for (let deck of decks) {
             let count = deck.cards[this.name.toLowerCase()].count;
             text = text + count + ' cards in ' + getStorageName(deck.storageIndex) + '<br>';

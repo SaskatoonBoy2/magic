@@ -1,6 +1,6 @@
 const STORAGEINDEXES = [];
 const STORAGESTRINGS = [];
-const COLOURTOSTORAGE = {'Black': 1, 'Blue': 2, 'Green': 3, 'Red': 4, 'White':5};
+const COLOURTOSTORAGE = {'Black': 1, 'Blue': 2, 'Green': 3, 'Red': 4, 'White':5, 'Colourless':11, 'Token': 1, 'Mixed': 2, 'Multicolour': 3};
 
 function createStorage(name) {
     STORAGESTRINGS.push(name.toLowerCase());
@@ -15,7 +15,7 @@ function getStorageName(index, cardNumber) {
     return name + ' (' + cardNumber + ')';
 }
 
-createStorage('Card Binder #1');
+createStorage('Card Binder #1'); 
 createStorage('Cardboard Box #1');
 createStorage('Cardboard Box #2');
 createStorage('Cardboard Box #3');
@@ -26,4 +26,5 @@ createStorage('Purple Deck Box #2');
 createStorage('Sapphire Deck Box #1');
 createStorage('Magenta Deck Box #1');
 createStorage('Green Deck Box #1');
+createStorage('Cardboard Box #6'); // 11
 

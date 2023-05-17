@@ -9,6 +9,14 @@ settings.nameBar = getElement('nameBar');
 settings.typeBar = getElement('typeBar');
 settings.advancedDiv = getElement('advancedDiv');
 settings.advancedButton = getElement('advancedButton');
+settings.commonIncludeCheckbox = getElement('commonIncludeCheckbox');
+settings.uncommonIncludeCheckbox = getElement('uncommonIncludeCheckbox');
+settings.rareIncludeCheckbox = getElement('rareIncludeCheckbox');
+settings.mythicIncludeCheckbox = getElement('mythicIncludeCheckbox');
+settings.commonMinCount = getElement('commonMinCount');
+settings.uncommonMinCount = getElement('uncommonMinCount');
+settings.rareMinCount = getElement('rareMinCount');
+settings.mythicMinCount = getElement('mythicMinCount');
 
 settings.getSearchValues = function() {
     let values = {};
@@ -24,6 +32,24 @@ settings.getSearchValues = function() {
     }
     values.cardHolder = cards.collected;
     values.separateSets = settings.separateSetsCheckbox.checked;
+    values.raritesIncluded = [];
+    values.minCounts = {};
+    values.minCounts.common = settings.commonMinCount.value;
+    values.minCounts.uncommon = settings.uncommonMinCount.value;
+    values.minCounts.rare = settings.rareMinCount.value;
+    values.minCounts.mythic = settings.mythicMinCount.value;
+    if (settings.commonIncludeCheckbox.checked) {
+        values.raritesIncluded.push('common');
+    }
+    if (settings.uncommonIncludeCheckbox.checked) {
+        values.raritesIncluded.push('uncommon');
+    }
+    if (settings.rareIncludeCheckbox.checked) {
+        values.raritesIncluded.push('rare');
+    }
+    if (settings.mythicIncludeCheckbox.checked) {
+        values.raritesIncluded.push('mythic');
+    }
     return values;
 }
 
@@ -57,8 +83,12 @@ list.clear = function() {
     }
 }
 
+function searchUpdate() {
+    list.updateSearch();
+}
+
 list.updateSearch = function() {
-  list.clear();
+  list.items = [];
   let searchSettings = settings.getSearchValues();
   for (let cardName of Object.keys(searchSettings.cardHolder)) {
     let indexName = cardName.toLowerCase();
@@ -69,16 +99,24 @@ list.updateSearch = function() {
             let set = searchSettings.cardHolder[cardName][set_code];
             for (let collector_number of Object.keys(set)) {
               let card = set[collector_number];
-              if (card.type.toLowerCase().includes(searchSettings.keywords.type)) {
-                list.items.push(card);
+              if (searchSettings.raritesIncluded.includes(card.rarity.toLowerCase())) {
+                if (searchSettings.minCounts[card.rarity.toLowerCase()] <= card.count) {
+                    if (card.type.toLowerCase().includes(searchSettings.keywords.type)) {
+                        list.items.push(card);
+                    }
+                }
               }
             }
           }
         }
       } else {
         let card = searchSettings.cardHolder[cardName].generic;
-        if (card.type.toLowerCase().includes(searchSettings.keywords.type)) {
-          list.items.push(card);
+        if (searchSettings.raritesIncluded.includes(card.rarity.toLowerCase())) {
+          if (searchSettings.minCounts[card.rarity.toLowerCase()] <= card.count) {
+              if (card.type.toLowerCase().includes(searchSettings.keywords.type)) {
+                  list.items.push(card);
+              }
+          }
         }
       }
     }

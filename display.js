@@ -24,6 +24,7 @@ display.statsPageOpen = false;
 display.advancedSearch = function() {
     display.clear()
     show(settings.advancedDiv);
+    show(display.backButton);
 }
 
 display.nextPage = function(){

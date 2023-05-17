@@ -8,9 +8,9 @@
   </head>
   <body>
     <div>
-      <button id="backButton" type="button" onclick="list.show();list.display();" class="hidden">Back</button>
-      <input id="nameBar" placeholder="Name" oninput="list.updateSearch()"></input>
-      <input id="typeBar" placeholder="Type" oninput="list.updateSearch()"></input>
+      <button id="backButton" type="button" onclick="list.updateSearch();list.show();list.display();" class="hidden">Back</button>
+      <input id="nameBar" placeholder="Name" oninput="searchUpdate();"></input>
+      <input id="typeBar" placeholder="Type" oninput="searchUpdate();"></input>
       <button id="advancedButton" type="button" onclick="display.advancedSearch();">Advanced Search</button>
       <button id="previousButton" type="button" onclick="display.previousPage();" class="hidden">Previous</button>
       <p id="pageLabel" class="inline">Page 1 of 1</p>
@@ -22,24 +22,24 @@
       <input id="separateSetsCheckbox" type="checkbox"></input>
       <h3>Common</h3>
       <p class="inline">Include</p>
-      <input id="includeCommon" type="checkbox" checked></input>
+      <input id="commonIncludeCheckbox" type="checkbox" checked></input>
       <p class="inline">Min Count</p>
-      <input id="minCountCommon" type="number" value=0></input>
+      <input id="commonMinCount" type="number" value=0></input>
       <h3>Uncommon</h3>
       <p class="inline">Include</p>
-      <input id="includeUncommon" type="checkbox" checked></input>
+      <input id="uncommonIncludeCheckbox" type="checkbox" checked></input>
       <p class="inline">Min Count</p>
-      <input id="minCountUncommon" type="number" value=0></input>
+      <input id="uncommonMinCount" type="number" value=0></input>
       <h3>Rare</h3>
       <p class="inline">Include</p>
-      <input id="includeRare" type="checkbox" checked></input>
+      <input id="rareIncludeCheckbox" type="checkbox" checked></input>
       <p class="inline">Min Count</p>
-      <input id="minCountRare" type="number" value=0></input>
+      <input id="rareMinCount" type="number" value=0></input>
       <h3>Mythic</h3>
       <p class="inline">Include</p>
-      <input id="includeMythic" type="checkbox" checked></input>
+      <input id="mythicIncludeCheckbox" type="checkbox" checked></input>
       <p class="inline">Min Count</p>
-      <input id="minCountMythic" type="number" value=0></input>
+      <input id="mythicMinCount" type="number" value=0></input>
     </div>
     <div id="listDiv"></div>
     <img class="inline" id="image" class="hidden">
