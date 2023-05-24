@@ -73,6 +73,9 @@ class GenericCard {
         if (this.type.toLowerCase().includes('token')) {
             return 'Token';
         }
+        if (this.mana_cost.includes('/')) {
+            return 'Mixed';
+        }
         if (this.colours.length == 0) {
             return 'Colourless';
         }
@@ -217,6 +220,9 @@ class Card {
         }
         if (this.type.toLowerCase().includes('token')) {
             return 'Token';
+        }
+        if (this.mana_cost.includes('/')) {
+            return 'Mixed';
         }
         if (this.colours.length == 0) {
             return 'Colourless';

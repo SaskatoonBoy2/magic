@@ -94,7 +94,7 @@ list.updateSearch = function() {
     let indexName = cardName.toLowerCase();
     if (indexName.includes(searchSettings.keywords.name)) {
       if (searchSettings.separateSets) {
-        for (let set_code of Object.keys(cardHolder[cardName])) {
+        for (let set_code of Object.keys(searchSettings.cardHolder[cardName])) {
           if (set_code != 'generic') {
             let set = searchSettings.cardHolder[cardName][set_code];
             for (let collector_number of Object.keys(set)) {
