@@ -2,6 +2,19 @@
 const cards = {};
 cards.collected = {};
 
+cards.exists = function(name, set, collector_number) {
+    if (cards[name] !== undefined) {
+        if (set === 'generic' || set === undefined) {
+            return true;
+        } else if (cards[name][set] !== undefined) {
+            if (cards[name][set][collector_number] !== undefined) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 cards.get = function(name,set_code,collector_number) {
     if (cards[name] == undefined) {
         return undefined
@@ -54,6 +67,12 @@ class GenericCard {
     }
 
     getColour() {
+        if (this.type.toLowerCase().includes('land')) {
+            return 'Land';
+        }
+        if (this.type.toLowerCase().includes('token')) {
+            return 'Token';
+        }
         if (this.colours.length == 0) {
             return 'Colourless';
         }
@@ -193,6 +212,12 @@ class Card {
     }
 
     getColour() {
+        if (this.type.toLowerCase().includes('land')) {
+            return 'Land';
+        }
+        if (this.type.toLowerCase().includes('token')) {
+            return 'Token';
+        }
         if (this.colours.length == 0) {
             return 'Colourless';
         }

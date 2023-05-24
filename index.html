@@ -16,6 +16,130 @@
       <p id="pageLabel" class="inline">Page 1 of 1</p>
       <button id="nextButton" type="button" onclick="display.nextPage();" class="hidden">Next</button>
     </div>
+    <div id="statsDiv" class="hidden">
+      <h1>Statistics</h1>
+      <div>
+        <h2 class="inline">Total</h2>
+        <button id="totalButton" type="button" onclick="stats.expandSection('total')">Expand</button>
+      </div>
+      <div class="hidden" id="totalDiv">
+        <h3 id="totalCommons"></h3>
+        <h3 id="totalUncommons"></h3>
+        <h3 id="totalRares"></h3>
+        <h3 id="totalMythics"></h3>
+        <h3 id="totalCards"></h3>
+      </div>
+      <div>
+        <h2 class="inline">Black</h2>
+        <button id="blackButton" type="button" onclick="stats.expandSection('black')">Expand</button>
+      </div>
+      <div class="hidden" id="blackDiv">
+        <h3 id="blackCommons"></h3>
+        <h3 id="blackUncommons"></h3>
+        <h3 id="blackRares"></h3>
+        <h3 id="blackMythics"></h3>
+        <h3 id="blackCards"></h3>
+      </div>
+      <div>
+        <h2 class="inline">Blue</h2>
+        <button id="blueButton" type="button" onclick="stats.expandSection('blue')">Expand</button>
+      </div>
+      <div class="hidden" id="blueDiv">
+        <h3 id="blueCommons"></h3>
+        <h3 id="blueUncommons"></h3>
+        <h3 id="blueRares"></h3>
+        <h3 id="blueMythics"></h3>
+        <h3 id="blueCards"></h3>
+      </div>
+      <div>
+        <h2 class="inline">Colourless</h2>
+        <button id="colourlessButton" type="button" onclick="stats.expandSection('colourless')">Expand</button>
+      </div>
+      <div class="hidden" id="colourlessDiv">
+        <h3 id="colourlessCommons"></h3>
+        <h3 id="colourlessUncommons"></h3>
+        <h3 id="colourlessRares"></h3>
+        <h3 id="colourlessMythics"></h3>
+        <h3 id="colourlessCards"></h3>
+      </div>
+      <div>
+        <h2 class="inline">Green</h2>
+        <button id="greenButton" type="button" onclick="stats.expandSection('green')">Expand</button>
+      </div>
+      <div class="hidden" id="greenDiv">
+        <h3 id="greenCommons"></h3>
+        <h3 id="greenUncommons"></h3>
+        <h3 id="greenRares"></h3>
+        <h3 id="greenMythics"></h3>
+        <h3 id="greenCards"></h3>
+      </div>
+      <div>
+        <h2 class="inline">Land</h2>
+        <button id="landButton" type="button" onclick="stats.expandSection('land')">Expand</button>
+      </div>
+      <div class="hidden" id="landDiv">
+        <h3 id="landCommons"></h3>
+        <h3 id="landUncommons"></h3>
+        <h3 id="landRares"></h3>
+        <h3 id="landMythics"></h3>
+        <h3 id="landCards"></h3>
+      </div>
+      <div>
+        <h2 class="inline">Mixed</h2>
+        <button id="mixedButton" type="button" onclick="stats.expandSection('mixed')">Expand</button>
+      </div>
+      <div class="hidden" id="mixedDiv">
+        <h3 id="mixedCommons"></h3>
+        <h3 id="mixedUncommons"></h3>
+        <h3 id="mixedRares"></h3>
+        <h3 id="mixedMythics"></h3>
+        <h3 id="mixedCards"></h3>
+      </div>
+      <div>
+        <h2 class="inline">Multicolour</h2>
+        <button id="multicolourButton" type="button" onclick="stats.expandSection('multicolour')">Expand</button>
+      </div>
+      <div class="hidden" id="multicolourDiv">
+        <h3 id="multicolourCommons"></h3>
+        <h3 id="multicolourUncommons"></h3>
+        <h3 id="multicolourRares"></h3>
+        <h3 id="multicolourMythics"></h3>
+        <h3 id="multicolourCards"></h3>
+      </div>
+      <div>
+        <h2 class="inline">Red</h2>
+        <button id="redButton" type="button" onclick="stats.expandSection('red')">Expand</button>
+      </div>
+      <div class="hidden" id="redDiv">
+        <h3 id="redCommons"></h3>
+        <h3 id="redUncommons"></h3>
+        <h3 id="redRares"></h3>
+        <h3 id="redMythics"></h3>
+        <h3 id="redCards"></h3>
+      </div>
+      <div>
+        <h2 class="inline">Token</h2>
+        <button id="tokenButton" type="button" onclick="stats.expandSection('token')">Expand</button>
+      </div>
+      <div class="hidden" id="tokenDiv">
+        <h3 id="tokenCommons"></h3>
+        <h3 id="tokenUncommons"></h3>
+        <h3 id="tokenRares"></h3>
+        <h3 id="tokenMythics"></h3>
+        <h3 id="tokenCards"></h3>
+      </div>
+      <div>
+        <h2 class="inline">White</h2>
+        <button id="whiteButton" type="button" onclick="stats.expandSection('white')">Expand</button>
+      </div>
+      <div class="hidden" id="whiteDiv">
+        <h3 id="whiteCommons"></h3>
+        <h3 id="whiteUncommons"></h3>
+        <h3 id="whiteRares"></h3>
+        <h3 id="whiteMythics"></h3>
+        <h3 id="whiteCards"></h3>
+      </div>
+    </div>
     <div id="advancedDiv" class="hidden">
       <h3>General</h3>
       <p class="inline">Separte By Sets</p>

@@ -1,23 +1,37 @@
 
 const stats = {};
 stats.queue = [];
-stats.fetchDelay = 100;
+stats.fetchDelay = 5;
+stats.div = getElement('statsDiv');
+stats.elements = {};
+stats.colours = ['white', 'red', 'blue', 'green', 'black', 'colourless', 'multicolour', 'mixed', 'token', 'land', 'total'];
+
+stats.expandSection = function(colour) {
+  if (stats.elements[colour].button.innerText == 'Expand') {
+    show(stats.elements[colour].div);
+    stats.elements[colour].button.innerText = 'Collapse';
+  } else {
+    hide(stats.elements[colour].div);
+    stats.elements[colour].button.innerText = 'Expand';
+  }
+}
 
 stats.show = function() {
     display.clear();
     show(display.backButton);
     display.statsPageOpen = true;
-    display.nameHeader.innerText = 'Statistics';
-    display.setHeader.innerText = 'Total Common Cards: ' + stats.total.common.count + ' [$'+stats.total.common.value+']';
-    display.colourHeader.innerText = 'Total Uncommon Cards: ' + stats.total.uncommon.count + ' [$'+stats.total.uncommon.value+']';
-    display.rarityHeader.innerText = 'Total Rare Cards: ' + stats.total.rare.count + ' [$'+stats.total.rare.value+']';
-    display.typeHeader.innerText = 'Total Mythic Cards: ' + stats.total.mythic.count + ' [$'+stats.total.mythic.value+']';
-    display.countHeader.innerText = 'Total Cards: ' + stats.total.count + ' [$'+stats.total.value+']';
+    show(stats.div);
+    for (colour of stats.colours) {
+      stats.elements[colour].commons.innerText = 'Common Cards: ' + stats[colour].common.count + ' [$'+stats[colour].common.value+']';
+      stats.elements[colour].uncommons.innerText = 'Uncommon Cards: ' + stats[colour].uncommon.count + ' [$'+stats[colour].uncommon.value+']';
+      stats.elements[colour].rares.innerText = 'Rare Cards: ' + stats[colour].rare.count + ' [$'+stats[colour].rare.value+']';
+      stats.elements[colour].mythics.innerText = 'Mythic Cards: ' + stats[colour]. mythic.count + ' [$'+stats[colour].mythic.value+']';
+      stats.elements[colour].cards.innerText = 'Total Cards: ' + stats[colour].count + ' [$'+stats[colour].value+']';
+    }
 }
 
 stats.calculate = function() {
-    let colours = ['white', 'red', 'blue', 'green', 'black', 'colourless', 'multicolour', 'mixed', 'total'];
-    for (let colour of colours) {
+    for (let colour of stats.colours) {
         stats[colour] = {};
         stats[colour].cards = [];
         stats[colour].count = 0;
@@ -26,6 +40,14 @@ stats.calculate = function() {
         stats[colour].uncommon = {count: 0, value: 0};
         stats[colour].rare = {count: 0, value: 0};
         stats[colour].mythic = {count: 0, value: 0}; 
+        stats.elements[colour] = {};
+        stats.elements[colour].div = getElement(colour+'Div');
+        stats.elements[colour].commons = getElement(colour+'Commons');
+        stats.elements[colour].uncommons = getElement(colour+'Uncommons');
+        stats.elements[colour].rares = getElement(colour+'Rares');
+        stats.elements[colour].mythics = getElement(colour+'Mythics');
+        stats.elements[colour].cards = getElement(colour+'Cards');
+        stats.elements[colour].button = getElement(colour+'Button');
     }
     for (let index of Object.keys(cards.collected)) {
       let sets = cards.collected[index];
@@ -42,7 +64,7 @@ stats.calculate = function() {
       }
     }
   
-    for (let colour of colours) {
+    for (let colour of stats.colours) {
       let cStat = stats[colour];
       for (let card of cStat.cards) {
         stats.fetch(card.set_code, card.collector_number);
@@ -68,20 +90,18 @@ stats.calculate = function() {
     }
 }
 
-stats.runNextFetch = async function(setCode, setNumber) {
+stats.runNextFetch = async function() {
     await delay(stats.fetchDelay);
-    //fetch("https://api.scryfall.com/cards/"+setCode+"/"+setNumber).then(function(res) {
-       //return res.json()}).then(function(data) {statsReturned(data);});
+    fetch("https://api.scryfall.com/cards/"+stats.queue[0][0]+"/"+stats.queue[0][1]).then(function(res) {
+       return res.json()}).then(function(data) {stats.queue.shift();stats.returned(data);});
 }
 
-stats.returned = function() {
+stats.returned = function(data) {
     if (stats.queue.length > 0) {
-      let fetchData = stats.queue.shift();
-      stats.runNextFetch(fetchData[0], fetchData[1]);
+      stats.runNextFetch();
     }
     let singleValue = parseFloat(data.prices.usd);
     let foilValue = parseFloat(data.prices.usd_foil);
-    statsCalced = statsCalced + 1;
     if (isNaN(singleValue)) {
       singleValue = 0;
     }
@@ -90,7 +110,7 @@ stats.returned = function() {
     }
     if (cards.exists(data.name.toLowerCase(), data.set, data.collector_number)) {
       let card = cards.get(data.name.toLowerCase(), data.set, data.collector_number);
-      let colour = card.getColour();
+      let colour = card.getColour().toLowerCase();
       let value = 0;
       if (card.foil > 0 && foilValue > 2) {
         value = value + foilValue * card.foil;
@@ -109,14 +129,13 @@ stats.returned = function() {
             stats.total[rarity].value = Math.round((stats.total[rarity].value + value)*100)/100;
         }
       }
-      if (display.statsPageOpen) {display.showStats();}
+      if (display.statsPageOpen) {stats.show();}
     }
 }
 
 stats.fetch = function(setCode, setNumber) {
-    if (stats.queue.length == 0) {
-        stats.runNextFetch(setCode, setNumber);
-    } else {
-        stats.queue.push([setCode, setNumber]);
+  stats.queue.push([setCode, setNumber]);
+    if (stats.queue.length == 1) {
+        stats.runNextFetch();
     }
 }

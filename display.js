@@ -28,32 +28,33 @@ display.advancedSearch = function() {
 }
 
 display.nextPage = function(){
-  if (display.page < display.maxPage) {
-    display.page += 1;
-    list.update();
-    if (display.page == display.maxPage) {
+  if (display.currentPage < display.maxPage) {
+    display.currentPage += 1;
+    list.display();
+    if (display.currentPage == display.maxPage) {
       hide(display.nextButton);
     }
-    if (page > 1) {
+    if (display.currentPage > 1) {
       show(display.previousButton);
     }
   }
 }
 
 display.previousPage = function() {
-  if (display.page > 1) {
-    display.page -= 1;
-    list.update();
-    if (display.page == 1) {
+  if (display.currentPage > 1) {
+    display.currentPage -= 1;
+    list.display();
+    if (display.currentPage == 1) {
         hide(display.previousButton);
     } 
-    if (display.page == display.maxPage-1) {
+    if (display.currentPage == display.maxPage-1) {
         hide(display.nextButton);
     }
   }
 }
 
 display.clear = function() {
+    hide(stats.div);
     hide(display.nextButton);
     hide(display.previousButton);
     hide(display.backButton);
