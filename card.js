@@ -264,6 +264,9 @@ class Card {
     }
 
     getCardValue() {
+        if (this.foil === 0) {
+            return this.getValue();
+        }
         if (this.getValue() > this.getFoilValue()) {
             return this.getValue();
         }

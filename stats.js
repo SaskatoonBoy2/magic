@@ -1,9 +1,10 @@
 
 const stats = {};
 stats.queue = [];
-stats.fetchDelay = 0.1;
+stats.fetchDelay = 0.01;
 stats.div = getElement('statsDiv');
 stats.elements = {};
+stats.calculatedCards = 0;
 stats.colours = ['white', 'red', 'blue', 'green', 'black', 'colourless', 'multicolour', 'mixed', 'token', 'land', 'total'];
 
 stats.expandSection = function(colour) {
@@ -35,11 +36,12 @@ stats.calculate = function() {
         stats[colour] = {};
         stats[colour].cards = [];
         stats[colour].count = 0;
+        stats[colour].uCount = 0;
         stats[colour].value = 0;
-        stats[colour].common = {count: 0, value: 0};
-        stats[colour].uncommon = {count: 0, value: 0};
-        stats[colour].rare = {count: 0, value: 0};
-        stats[colour].mythic = {count: 0, value: 0}; 
+        stats[colour].common = {count: 0, uCount: 0, value: 0};
+        stats[colour].uncommon = {count: 0, uCount: 0, value: 0};
+        stats[colour].rare = {count: 0, uCount: 0, value: 0};
+        stats[colour].mythic = {count: 0, uCount: 0, value: 0}; 
         stats.elements[colour] = {};
         stats.elements[colour].div = getElement(colour+'Div');
         stats.elements[colour].commons = getElement(colour+'Commons');
@@ -69,7 +71,9 @@ stats.calculate = function() {
       for (let card of cStat.cards) {
         stats.fetch(card.set_code, card.collector_number);
         cStat.count = cStat.count + card.count;
+        cStat.uCount += 1;
         stats.total.count = stats.total.count + card.count;
+        stats.total.uCount += 1;
         if (card.rarity == 'Common') {
           cStat.common.count = cStat.common.count + card.count;
           stats.total.common.count = stats.total.common.count + card.count;
@@ -100,6 +104,8 @@ stats.returned = function(data) {
     if (stats.queue.length > 0) {
       stats.runNextFetch();
     }
+    stats.calculatedCards += 1;
+    console.log('Remaining Cards: ' + (stats.total.uCount - stats.calculatedCards));
     let singleValue = parseFloat(data.prices.usd);
     let foilValue = parseFloat(data.prices.usd_foil);
     if (isNaN(singleValue)) {

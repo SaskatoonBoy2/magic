@@ -1,6 +1,6 @@
 const STORAGEINDEXES = [];
 const STORAGESTRINGS = [];
-const COLOURTOSTORAGE = {'Black': 1, 'Blue': 2, 'Green': 3, 'Red': 4, 'White':5, 'Colourless':11, 'Token': 1, 'Mixed': 2, 'Multicolour': 3};
+const COLOURTOSTORAGE = {'Black': 1, 'Blue': 2, 'Green': 3, 'Red': 4, 'White':5, 'Land':11, 'Token': 1, 'Mixed': 2, 'Colourless': 3, 'Multicolour': 5};
 
 function createStorage(name) {
     STORAGESTRINGS.push(name.toLowerCase());
@@ -9,6 +9,8 @@ function createStorage(name) {
 
 function getStorageName(index, cardNumber) {
     let name = STORAGESTRINGS[index];
+    console.log(name);
+    console.log(index);
     if (name.includes('deck')) {
         return name;
     }
