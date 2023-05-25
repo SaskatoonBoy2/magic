@@ -66,6 +66,10 @@ class GenericCard {
         return this.collector_numbers[0];
     }
 
+    getCardValue() {
+        return 0;
+    }
+
     getColour() {
         if (this.type.toLowerCase().includes('land')) {
             return 'Land';
@@ -73,7 +77,7 @@ class GenericCard {
         if (this.type.toLowerCase().includes('token')) {
             return 'Token';
         }
-        if (this.mana_cost.includes('/')) {
+        if (this.cards[0].mana_cost.includes('/')) {
             return 'Mixed';
         }
         if (this.colours.length == 0) {
@@ -257,6 +261,13 @@ class Card {
             return 0;
         }
         return this.foilValue;
+    }
+
+    getCardValue() {
+        if (this.getValue() > this.getFoilValue()) {
+            return this.getValue();
+        }
+        return this.getFoilValue();
     }
 
     getStorageString() {

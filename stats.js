@@ -1,7 +1,7 @@
 
 const stats = {};
 stats.queue = [];
-stats.fetchDelay = 5;
+stats.fetchDelay = 0.1;
 stats.div = getElement('statsDiv');
 stats.elements = {};
 stats.colours = ['white', 'red', 'blue', 'green', 'black', 'colourless', 'multicolour', 'mixed', 'token', 'land', 'total'];

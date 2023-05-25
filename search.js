@@ -2,6 +2,7 @@
 const list = {}
 list.div = getElement('listDiv');
 list.items = [];
+list.isOpen = true;
 
 const settings = {};
 settings.separateSetsCheckbox = getElement('separateSetsCheckbox');
@@ -17,6 +18,8 @@ settings.commonMinCount = getElement('commonMinCount');
 settings.uncommonMinCount = getElement('uncommonMinCount');
 settings.rareMinCount = getElement('rareMinCount');
 settings.mythicMinCount = getElement('mythicMinCount');
+settings.valuesRangeMin = getElement('valuesRangeMin');
+settings.valuesRangeMax = getElement('valuesRangeMax');
 
 settings.getSearchValues = function() {
     let values = {};
@@ -38,6 +41,8 @@ settings.getSearchValues = function() {
     values.minCounts.uncommon = settings.uncommonMinCount.value;
     values.minCounts.rare = settings.rareMinCount.value;
     values.minCounts.mythic = settings.mythicMinCount.value;
+    values.valueMin = settings.valuesRangeMin.value;
+    values.valueMax = settings.valuesRangeMax.value;
     if (settings.commonIncludeCheckbox.checked) {
         values.raritesIncluded.push('common');
     }
@@ -53,8 +58,23 @@ settings.getSearchValues = function() {
     return values;
 }
 
+settings.isValidCard = function(card) {
+  let searchSettings = settings.getSearchValues();
+    if (card.getCardValue() >= searchSettings.valueMin && card.getCardValue() <= searchSettings.valueMax) {
+      if (searchSettings.raritesIncluded.includes(card.rarity.toLowerCase())) {
+        if (searchSettings.minCounts[card.rarity.toLowerCase()] <= card.count) {
+            if (card.type.toLowerCase().includes(searchSettings.keywords.type)) {
+              return true;
+            }
+        }
+      }
+  }
+  return false;
+}
+
 list.show = function() {
     display.clear();
+    list.isOpen = true;
     show(settings.advancedButton);
     show(settings.nameBar);
     show(settings.typeBar);
@@ -99,24 +119,16 @@ list.updateSearch = function() {
             let set = searchSettings.cardHolder[cardName][set_code];
             for (let collector_number of Object.keys(set)) {
               let card = set[collector_number];
-              if (searchSettings.raritesIncluded.includes(card.rarity.toLowerCase())) {
-                if (searchSettings.minCounts[card.rarity.toLowerCase()] <= card.count) {
-                    if (card.type.toLowerCase().includes(searchSettings.keywords.type)) {
-                        list.items.push(card);
-                    }
-                }
+              if (settings.isValidCard(card)) {
+                list.items.push(card);
               }
             }
           }
         }
       } else {
         let card = searchSettings.cardHolder[cardName].generic;
-        if (searchSettings.raritesIncluded.includes(card.rarity.toLowerCase())) {
-          if (searchSettings.minCounts[card.rarity.toLowerCase()] <= card.count) {
-              if (card.type.toLowerCase().includes(searchSettings.keywords.type)) {
-                  list.items.push(card);
-              }
-          }
+        if (settings.isValidCard(card)) {
+          list.items.push(card);
         }
       }
     }
@@ -134,6 +146,23 @@ list.updateSearch = function() {
   }
   list.display();
 
+}
+
+list.addItem = function(card) {
+  list.items.push(card);
+  list.show();
+  display.maxPage = Math.ceil(list.items.length/display.pageSize);
+  if (display.maxPage < 1) {
+    display.maxPage = 1;
+  }
+  if (display.currentPage > display.maxPage) {
+    display.currentPage = display.maxPage;
+  }
+  hide(display.previousButton);
+  if (list.items.length > display.pageSize) {
+    show(display.nextButton);
+  }
+  list.display();
 }
 
 list.display = function() {

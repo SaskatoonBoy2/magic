@@ -14,6 +14,7 @@ display.rarityHeader = getElement('rarityHeader');
 display.typeHeader = getElement('typeHeader');
 display.countHeader = getElement('countHeader');
 display.foilHeader = getElement('foilHeader');
+display.costHeader = getElement('costHeader');
 display.valueParagraph = getElement('valueParagraph');
 display.textParagraph = getElement('textParagraph');
 display.flavourParagraph = getElement('flavourParagraph');
@@ -65,6 +66,7 @@ display.clear = function() {
     hide(settings.advancedDiv);
     hide(settings.advancedButton);
     list.clear();
+    list.isOpen = false;
     display.nameHeader.innerText = '';
     display.setHeader.innerText = '';
     display.colourHeader.innerText = '';
@@ -72,6 +74,7 @@ display.clear = function() {
     display.typeHeader.innerText = '';
     display.countHeader.innerText = '';
     display.foilHeader.innerText = '';
+    display.costHeader.innerText = '';
     display.valueParagraph.innerText = '';
     display.textParagraph.innerText = '';
     display.flavourParagraph.innerText = '';
@@ -88,12 +91,14 @@ display.showCard = function(name, set_code, collector_number, isCombined, totalC
   display.typeHeader.innerHTML = '  Type: ' + card.type;
   display.textParagraph.innerHTML = '  Text: ' + card.text;
   display.flavourParagraph.innerHTML = '  Flavour: ' + card.flavour_text;
+  display.costHeader.innerHTML = '  Est. Value: ' + card.value;
   if (settings.separateSetsCheckbox.checked) {
     display.storageParagraph.innerHTML = '  Storage: ' + card.getStorageString();
   } else {
     display.storageParagraph.innerHTML = '  Storage: ' + card.getStorageString();
   }
   display.image.src = card.imageURL;
+  list.isOpen = false;
   show(display.image);
   show(display.backButton);
   hide(display.nextButton);
