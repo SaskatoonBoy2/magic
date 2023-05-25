@@ -1,11 +1,15 @@
 cards.decks = {};
 
 class Deck {
-    constructor(name, storageIndex) {
+    constructor(name, storage) {
         this.name = name
         this.cards = {};
         cards.decks[name] = this;
-        this.storageIndex = storageIndex;
+        this.storage = storage;
+    }
+    
+    getName() {
+        return this.storage.getName();
     }
 
     addCard(count, name, set_code, foil, collector_number) {

@@ -40,6 +40,12 @@ class GenericCard {
         this.count = card.count;
         this.foil = card.foil;
         this.imageURL = card.imageURL;
+        this.group = card.group;
+        if (card.binderLocation === undefined) {
+            this.binderLocation = Infinity
+        } else {
+            this.binderLocation = card.binderLocation;
+        } 
     }
 
     addCard(card, count, foil) {
@@ -50,6 +56,9 @@ class GenericCard {
         }
         if (foil) {
             this.foil = this.foil + count;
+            if (this.binderLocation > card.binderLocation) {
+                this.binderLocation = card.binderLocation;
+            }
         }
         this.count = this.count + count;
     }
@@ -93,20 +102,20 @@ class GenericCard {
         let text = '';
         let cardsInBox = this.count;
         let decks = [];
-        let storageIndex = Infinity;
+        let location = Infinity;
         for (let card of this.cards) {
             for (let deck of card.decks) {
                 if (!decks.includes(deck)) {
                     decks.push(deck);
                 }
             }
-            if (card.storageIndex < storageIndex) {
-                storageIndex = card.storageIndex;
+            if (card.location < location) {
+                location = card.location;
             }
         }
         for (let deck of decks) {
             let count = deck.cards[this.name.toLowerCase()].count;
-            text = text + count + ' cards in ' + getStorageName(deck.storageIndex) + '<br>';
+            text = text + count + ' cards in ' + deck.getName() + '<br>';
             cardsInBox = cardsInBox - count;
         }
         let cardsInBinder = this.foil;
@@ -117,9 +126,9 @@ class GenericCard {
             cardsInBox = cardsInBox - this.foil;
         }
         if (cardsInBinder > 0) {
-            text = text + cardsInBinder + ' cards in ' + getStorageName(0) + '<br>';
+            text = text + cardsInBinder + ' cards in ' + storage.binder.getName(this.binderLocation) + '<br>';
         }
-        text = text + cardsInBox + ' cards in ' + getStorageName(COLOURTOSTORAGE[this.getColour()], storageIndex);
+        text = text + cardsInBox + ' cards in ' + this.group.getName(location);
         return text;
     }
 }
@@ -179,8 +188,8 @@ class Card {
         this.decks = [];
         this.value = NaN;
         this.foilValue = NaN;
-        this.storageIndex = 0;
         this.deckcards = 0;
+        this.group = storage.colours[this.getColour().toLowerCase()];
 
         if (cards[this.index] == undefined) {
             cards[this.index] = {};
@@ -200,12 +209,11 @@ class Card {
         this.count = this.count + count;
         if (foil) {
             this.foil = this.foil + count;
+            this.binderLocation = storage.binder.getIndex(count);
         }
         if (this.deckcards < count) {
             if (!foil) {
-                let index = COLOURTOSTORAGE[this.getColour()];
-                this.storageIndex = STORAGEINDEXES[index];
-                STORAGEINDEXES[index] = STORAGEINDEXES[index] + count - this.deckcards;
+                this.location = this.group.getIndex(count-this.deckcards);
             }
             this.deckcards = 0;
         } else {
@@ -278,7 +286,7 @@ class Card {
         let cardsInBox = this.count;
         for (let deck of this.decks) {
             let count = deck.cards[this.name.toLowerCase()].count;
-            text = text + count + ' cards in ' + getStorageName(deck.storageIndex) + '<br>';
+            text = text + count + ' cards in ' + deck.getName() + '<br>';
             cardsInBox = cardsInBox - count;
         }
         let cardsInBinder = this.foil;
@@ -289,9 +297,9 @@ class Card {
             cardsInBox = cardsInBox - this.foil;
         }
         if (cardsInBinder > 0) {
-            text = text + cardsInBinder + ' cards in ' + getStorageName(0) + '<br>';
+            text = text + cardsInBinder + ' cards in ' + storage.binder.getName(this.binderLocation) + '<br>';
         }
-        text = text + cardsInBox + ' cards in ' + getStorageName(COLOURTOSTORAGE[this.getColour()], this.storageIndex);
+        text = text + cardsInBox + ' cards in ' + this.group.getName(this.location);
         return text;
     }
 

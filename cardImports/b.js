@@ -150,7 +150,7 @@ collection.addCard(2, 'Briarpack Alpha', SETS.DARKASCENSION);
 collection.addCard(2, 'Brighthearth Banneret', SETS.MORNINGTIDE);
 collection.addCard(1, 'Brimstone Volley', SETS.CONSPIRACY);
 collection.addCard(5, 'Brimstone Volley', SETS.INNISTRAD);
-collection.addCard(1, 'Bring the Ending', SETS.ALLWILLBEONE);
+collection.addCard(1, 'Bring the Ending', SETS.ALLWILLBEONE, true);
 collection.addCard(4, 'Brink of Disaster', SETS.CORE2012);
 collection.addCard(1, 'Brink of Disaster', SETS.WORLDWAKE);
 collection.addCard(1, 'Broken Ambitions', SETS.LORWYN);

@@ -1,5 +1,5 @@
 
-const CRITTER = new Deck('Critter', 6);
+const CRITTER = new Deck('Critter', storage.decks.purple[0]);
 
 CRITTER.addCard(1, 'Ajani, Caller of the Pride', SETS.CORE2013);
 CRITTER.addCard(3, 'Divine Favor', SETS.CORE2012);

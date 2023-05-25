@@ -1,5 +1,5 @@
 
-const HAMSTER = new Deck('Hamster', 7);
+const HAMSTER = new Deck('Hamster', storage.decks.purple[1]);
 
 HAMSTER.addCard(4, 'Avacyn\'s Pilgrim', SETS.INNISTRAD);
 HAMSTER.addCard(1, 'Banefire', SETS.DUELSOFTHEPLANESWALKERS);

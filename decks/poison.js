@@ -1,5 +1,5 @@
 
-const POISON = new Deck('Poison', 8);
+const POISON = new Deck('Poison', storage.decks.sapphire[0]);
 
 POISON.addCard(3, 'Blight Mamba', SETS.SCARSOFMIRRODIN);
 POISON.addCard(1, 'Blightbelly Rat', SETS.ALLWILLBEONE, false, 289);

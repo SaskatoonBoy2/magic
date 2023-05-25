@@ -90,7 +90,7 @@ display.showCard = function(name, set_code, collector_number, isCombined, totalC
   display.rarityHeader.innerHTML = '  Rarity: ' + card.rarity;
   display.typeHeader.innerHTML = '  Type: ' + card.type;
   display.textParagraph.innerHTML = '  Text: ' + card.text;
-  display.flavourParagraph.innerHTML = '  Flavour: ' + card.flavour_text;
+  //display.flavourParagraph.innerHTML = '  Flavour: ' + card.flavour_text;
   display.costHeader.innerHTML = '  Est. Value: $' + card.getValue() + ' ($ ' + card.getFoilValue() + ')';
   if (settings.separateSetsCheckbox.checked) {
     display.storageParagraph.innerHTML = '  Storage: ' + card.getStorageString();
