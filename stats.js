@@ -105,7 +105,7 @@ stats.returned = function(data) {
       stats.runNextFetch();
     }
     stats.calculatedCards += 1;
-    //console.log('Remaining Cards: ' + (stats.total.uCount - stats.calculatedCards));
+    console.log('Remaining Cards: ' + (stats.total.uCount - stats.calculatedCards));
     let singleValue = parseFloat(data.prices.usd);
     let foilValue = parseFloat(data.prices.usd_foil);
     if (isNaN(singleValue)) {
